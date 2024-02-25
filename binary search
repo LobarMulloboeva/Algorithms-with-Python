@@ -1,0 +1,22 @@
+def search(searchlist, key):
+    mid = int(len(searchlist) / 2)
+    print("Searching midpoint at ", str(searchlist[mid]))
+    
+    if mid == 0:
+        print("Key Not found!")
+        return key
+    
+    elif key == searchlist[mid]:
+        print("Key found")
+        return searchlist[mid]
+    
+    elif key > searchlist[mid]:
+        print("searchlist now contains ", searchlist[mid: ])
+        search(searchlist[mid: ], key)
+        
+    else:
+        print("searchlist now contains ", searchlist[ : mid])
+        search(searchlist[ : mid], key)
+        
+alist = list(range(1, 21))
+search(alist, 5)
