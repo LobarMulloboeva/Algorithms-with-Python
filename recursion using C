@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int recursion(int n);
+
+int main(void)
+{
+    int n = 12;
+    printf("Fibonacci sequence up to position %d:\n", n);
+    for(int i = 0; i <= n; i++)
+    {
+        printf("%d, ", recursion(i));
+    }
+    putchar('\n');
+    return 0;
+}
+
+int recursion(int n)
+{
+    if(n <= 0)
+    {
+        return 0;
+    }
+
+    if(n == 1)
+    {
+        return 1;
+    }
+
+    else
+    {
+        return recursion(n - 1) + recursion(n - 2);
+    }
+}
